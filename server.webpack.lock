@@ -1,0 +1,6 @@
+{
+  "https://res.cloudinary.com/dblbgz4ym/video/upload/v1719608142/SHOWREEL_MARCEAU_LUTIN_2024_1cd0cd2064.mp4": { "integrity": "sha512-EeSCVOnEysO4Bibx0896WIhIQnn7dG77LK5GnveKfsSunQG0FPDJ1dSTcMQotGLyjhmcQwkw1fXCqoNpGFK2Ug==", "contentType": "video/mp4;codecs=avc1" },
+  "https://res.cloudinary.com/dblbgz4ym/video/upload/v1719608142/SHOWREEL_MARCEAU_LUTIN_2024_1cd0cd2064.mp4?thumbnailTime=0": { "integrity": "sha512-EeSCVOnEysO4Bibx0896WIhIQnn7dG77LK5GnveKfsSunQG0FPDJ1dSTcMQotGLyjhmcQwkw1fXCqoNpGFK2Ug==", "contentType": "video/mp4;codecs=avc1" },
+  "https://www.mydomain.com/remote-video.mp4": { "resolved": "https://www.web.com/mydomain?brand=mydomain&channelID=P99C101S653N0B2A16D132E0000V147", "integrity": "sha512-QeGuNM1+t/vNSJU8xrB18pWzhnAwSgJDLpvGPJYZ+wCyqg8GLsAR922ijmxT4dwi3gmWHAxB2KRDLb8Fim/IJQ==", "contentType": "text/html;charset=utf-8" },
+  "version": 1
+}
