@@ -23,10 +23,10 @@ export default function Home() {
       <header
         className={
           `fixed top-0 flex flex-col text-center h-screen ease-in-out duration-300 text-zinc-50 bg-stone-950
-          ${isActive ? "w-1/5 p-7" : "w-0 p-0"}`
+          ${isActive ? "w-1/5 p-4" : "w-0 p-0"}`
         }
       >
-        <span className="mb-auto pt-20 text-lg text-nowrap">
+        <span className="mb-auto pt-20 text-lg">
           MARCEAU LUTIN
         </span>
 
@@ -89,7 +89,7 @@ export default function Home() {
         ref={ref}
         className={
           `masonry md:masonry-md ease-in-out duration-300 py-10
-          ${isActive ? "w-4/5 ml-auto" : "w-5/6 mx-auto"}`
+          ${isActive ? "w-4/5 ml-auto px-10" : "w-5/6 mx-auto"}`
         }
       >
         <div className="relative">
