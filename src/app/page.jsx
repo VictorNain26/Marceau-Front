@@ -1,7 +1,7 @@
 "use client"
 
 import { ChevronDownIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Image from "next/image"
 import Link from "next/link";
@@ -22,12 +22,16 @@ export default function Home() {
     <main>
       <header
         className={
-          `fixed top-0 flex flex-col text-center h-screen ease-in-out duration-300 text-zinc-50 bg-stone-950
-          ${isActive ? "w-1/5 p-4" : "w-0 p-0"}`
+          `fixed top-0 flex flex-col h-screen shadow ease-in-out duration-300 text-zinc-50 bg-stone-950
+          ${isActive ? "w-1/5 px-14 py-3" : "w-0 p-0"}`
         }
       >
-        <span className="mb-auto pt-20 text-lg">
-          MARCEAU LUTIN
+        <span className="pt-20 text-4xl text-start">
+          MARCEAU
+        </span>
+
+        <span className="mb-auto text-4xl text-start">
+          LUTIN
         </span>
 
         <ul className="text-sm mb-auto">
@@ -37,7 +41,7 @@ export default function Home() {
           <li>PHOTOGRAPHE</li>
         </ul>
 
-        <div className="text-xs mt-auto">
+        <div className="text-xs mt-auto text-center">
           <div className="flex justify-center mb-2">
             <Link href="https://www.instagram.com/maresso__/" target="_blank" className="mr-1 cursor-pointer">
               <Image src="/icons/instagram.svg" width={30} height={30} alt="Instagram icon" />
@@ -57,15 +61,14 @@ export default function Home() {
       </header>
 
       <video
-        src="./videos/showreel.mp4"
+        src="/videos/showreel.mp4"
         autoPlay loop muted
         className={
           `object-cover fixed right-0 ease-in-out duration-300 h-screen
           ${isActive ? "w-4/5" : "w-full"}
           ${inView ? "brightness-[0.2]" : ""}`
         }
-      >
-      </video>
+      />
 
       <div className={ `h-screen ease-in-out duration-300 ml-auto ${isActive ? "w-4/5" : "w-full"}` }>
         <ChevronLeftIcon
@@ -88,97 +91,105 @@ export default function Home() {
       <section
         ref={ref}
         className={
-          `masonry md:masonry-md ease-in-out duration-300 py-10
-          ${isActive ? "w-4/5 ml-auto px-10" : "w-5/6 mx-auto"}`
+          `masonry md:masonry-md gap-4 ease-in-out duration-300 py-10
+          ${isActive ? "w-4/5 ml-auto px-20" : "w-5/6 mx-auto"}`
         }
       >
-        <div className="relative">
+        <Link href={`/project/${200}`} className="relative flex mb-[1.5em]">
           <Image
             src="/images/DSC03379.jpg"
             alt="Picture of the author"
-            width={400}
+            width={1000}
             height={0}
-            className="rounded-lg break-inside mb-4 mx-auto"
+            className="rounded-lg break-inside mx-auto w-full object-contain  "
           />
-        </div>
 
-        <div className="relative">
+          <div className="absolute top-0 left-0 w-full h-full cursor-pointer bg-stone-950 opacity-0 hover:opacity-60 ease-in-out duration-300 rounded-lg">
+            <span className="text-white">Titre du projet</span>
+          </div>
+        </Link>
+
+        <div className="relative mb-[1.5em]">
           <Image
             src="/images/DSC03385.jpg"
             alt="Picture of the author"
-            width={400}
+            width={1000}
             height={0}
-            className="rounded-lg break-inside mb-4 mx-auto"
+            className="rounded-lg break-inside mx-auto w-full object-contain  "
           />
+
+          <div className="absolute top-0 left-0 w-full h-full cursor-pointer bg-stone-950 opacity-0 hover:opacity-60 ease-in-out duration-300 rounded-lg">
+            <span className="text-white">Titre du projet</span>
+          </div>
         </div>
 
-        <div className="relative">
+        <div className="relative mb-[1.5em]">
           <Image
             src="/images/DSC03379.jpg"
             alt="Picture of the author"
-            width={400}
+            width={1000}
             height={0}
-            className="rounded-lg break-inside mb-4 mx-auto"
+            className="rounded-lg break-inside mx-auto w-full"
           />
         </div>
 
-        <div className="relative">
+        <div className="relative mb-[1.5em]">
           <Image
             src="/images/DSC03385.jpg"
             alt="Picture of the author"
-            width={400}
+            width={1000}
             height={0}
-            className="rounded-lg break-inside mb-4 mx-auto"
+            className="rounded-lg break-inside mx-auto w-full"
           />
         </div>
 
-        <div className="relative">
+        <div className="relative mb-[1.5em]">
           <Image
             src="/images/DSC03379.jpg"
             alt="Picture of the author"
-            width={400}
+            width={1000}
             height={0}
-            className="rounded-lg break-inside mb-4 mx-auto"
+            className="rounded-lg break-inside mx-auto w-full"
           />
         </div>
 
-        <div className="relative">
+        <div className="relative mb-[1.5em]">
           <Image
             src="/images/DSC03379.jpg"
             alt="Picture of the author"
-            width={400}
+            width={1000}
             height={0}
-            className="rounded-lg break-inside mb-4 mx-auto"
+            className="rounded-lg break-inside mx-auto w-full"
           />
         </div>
 
-        <div className="relative">
+        <div className="relative mb-[1.5em]">
           <Image
             src="/images/DSC03385.jpg"
             alt="Picture of the author"
-            width={400}
+            width={1000}
             height={0}
-            className="rounded-lg break-inside mb-4 mx-auto"
+            className="rounded-lg break-inside mx-auto w-full"
           />
         </div>
 
-        <div className="relative">
+        <div className="relative mb-[1.5em]">
           <Image
             src="/images/DSC03385.jpg"
             alt="Picture of the author"
-            width={400}
+            width={1000}
             height={0}
-            className="rounded-lg break-inside mb-4 mx-auto"
+            className="rounded-lg break-inside mx-auto w-full"
           />
         </div>
 
-        <div className="relative">
+        <div className="relative mb-[1.5em]">
           <Image
             src="/images/DSC03379.jpg"
             alt="Picture of the author"
-            width={400}
+            width={1000}
             height={0}
-            className="rounded-lg break-inside mb-4 mx-auto"
+            className="rounded-lg break-inside mx-auto w-full"
           />
         </div>
       </section>
