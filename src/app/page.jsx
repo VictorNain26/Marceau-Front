@@ -23,7 +23,7 @@ export default function Home() {
       <header
         className={
           `fixed top-0 flex flex-col h-screen shadow ease-in-out duration-300 text-zinc-50 bg-stone-950
-          ${isActive ? "w-1/5 px-14 py-3" : "w-0 p-0"}`
+          ${isActive ? "w-1/5 px-14 py-3 z-10" : "w-0 p-0"}`
         }
       >
         <span className="pt-20 text-4xl text-start">
@@ -66,7 +66,7 @@ export default function Home() {
         className={
           `object-cover fixed right-0 ease-in-out duration-300 h-screen
           ${isActive ? "w-4/5" : "w-full"}
-          ${inView ? "brightness-[0.2]" : ""}`
+          ${inView ? "blur-3xl scale-125" : ""}`
         }
       />
 

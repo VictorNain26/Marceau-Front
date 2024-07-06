@@ -16,8 +16,9 @@ export default function Project({ params }) {
       <Image
         src="/images/DSC03379.jpg"
         alt="Picture of the author"
-        fill
-        className="object-cover fixed top-0 w-full blur-3xl -z-10"
+        width={1000}
+        height={0}
+        className="object-cover fixed w-full blur-3xl scale-125 -z-10"
       />
 
       <div className="w-3/5 mx-auto">
