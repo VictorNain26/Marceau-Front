@@ -95,17 +95,17 @@ export default function Home() {
           ${isActive ? "w-4/5 ml-auto px-20" : "w-5/6 mx-auto"}`
         }
       >
-        <Link href={`/project/${200}`} className="relative flex mb-[1.5em]">
+        <Link href={`/project/${200}`} className="relative flex mb-[1.5em] group hover:shadow-2xl">
           <Image
             src="/images/DSC03379.jpg"
             alt="Picture of the author"
             width={1000}
             height={0}
-            className="rounded-lg break-inside mx-auto w-full object-contain  "
+            className="rounded-lg break-inside w-full object-contain group-hover:blur ease-in-out duration-300"
           />
 
-          <div className="absolute top-0 left-0 w-full h-full cursor-pointer bg-stone-950 opacity-0 hover:opacity-60 ease-in-out duration-300 rounded-lg">
-            <span className="text-white">Titre du projet</span>
+          <div className="absolute flex w-full h-full cursor-pointer rounded-lg p-4">
+            <span className="text-white mt-auto">Titre du projet</span>
           </div>
         </Link>
 
@@ -118,7 +118,7 @@ export default function Home() {
             className="rounded-lg break-inside mx-auto w-full object-contain  "
           />
 
-          <div className="absolute top-0 left-0 w-full h-full cursor-pointer bg-stone-950 opacity-0 hover:opacity-60 ease-in-out duration-300 rounded-lg">
+          <div className="absolute top-0 left-0 w-full h-full cursor-pointer bg-stone-950 opacity-0 hover:blur-3xl ease-in-out duration-300 rounded-lg">
             <span className="text-white">Titre du projet</span>
           </div>
         </div>
