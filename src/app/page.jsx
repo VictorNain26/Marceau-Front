@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image"
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import { useQuery } from "@tanstack/react-query";
 
 export default function Home() {
   const [isActive, setActive] = useState(true);
@@ -20,17 +21,28 @@ export default function Home() {
   return (
     <>
     <main>
+      <header className="flex lg:hidden fixed top-0 z-10 justify-center w-full py-4">
+        <h1 className="mix-blend-overlay text-xl rounded">MARCEAU LUTIN</h1>
+      </header>
       <header
         className={
-          `fixed top-0 flex flex-col h-screen shadow ease-in-out duration-300 text-zinc-50 bg-stone-950
-          ${isActive ? "w-1/5 px-14 py-3 z-10" : "w-0 p-0"}`
+          `hidden lg:flex fixed top-0 flex-col h-screen ease-in-out duration-200 text-zinc-50
+          ${isActive ? "w-1/5 px-4 xl:px-14 py-3 z-10" : "w-0 p-0"}`
         }
       >
-        <span className="pt-20 text-4xl text-start">
+        <Image
+          src="/images/DSC03379.jpg"
+          alt="Picture of the author"
+          width={1000}
+          height={0}
+          className="object-cover absolute w-full h-full left-0 top-0 blur-3xl -z-10"
+        />
+
+        <span className="pt-20 text-3xl xl:text-4xl text-start">
           MARCEAU
         </span>
 
-        <span className="mb-auto text-4xl text-start">
+        <span className="mb-auto text-3xl xl:text-4xl text-start">
           LUTIN
         </span>
 
@@ -64,16 +76,16 @@ export default function Home() {
         src="/videos/showreel.mp4"
         autoPlay loop muted
         className={
-          `object-cover fixed right-0 ease-in-out duration-300 h-screen
-          ${isActive ? "w-4/5" : "w-full"}
+          `object-cover fixed right-0 ease-in-out duration-200 h-screen
+          ${isActive ? "w-full lg:w-4/5" : "w-full"}
           ${inView ? "blur-3xl scale-125" : ""}`
         }
       />
 
-      <div className={ `h-screen ease-in-out duration-300 ml-auto ${isActive ? "w-4/5" : "w-full"}` }>
+      <div className={ `h-screen ease-in-out duration-200 ml-auto ${isActive ? "w-4/5" : "w-full"}` }>
         <ChevronLeftIcon
           className={
-            `fixed w-12 text-zinc-50 cursor-pointer ease-in-out duration-300 h-full z-10
+            `hidden lg:flex fixed w-12 text-zinc-50 cursor-pointer ease-in-out duration-300 h-full z-10
             ${isActive ? "" : "rotate-180"}`
           }
           onClick={toggleClass}
@@ -81,8 +93,8 @@ export default function Home() {
 
         <ChevronDownIcon
           className={
-            `fixed bottom-0 right-0 h-12 animate-bounce ease-in-out duration-300 text-zinc-50
-            ${isActive ? "w-4/5" : "w-full"}
+            `fixed bottom-0 right-0 h-12 animate-bounce ease-in-out duration-200 text-zinc-50
+            ${isActive ? "w-full lg:w-4/5" : "w-full"}
             ${inView ? "opacity-0" : ""}`
           }
         />
@@ -91,20 +103,20 @@ export default function Home() {
       <section
         ref={ref}
         className={
-          `masonry md:masonry-md gap-4 ease-in-out duration-300 py-10
-          ${isActive ? "w-4/5 ml-auto px-20" : "w-5/6 mx-auto"}`
+          `masonry md:masonry-md gap-4 ease-in-out duration-200 py-10 z-10
+          ${isActive ? "w-full lg:w-4/5 ml-auto px-4 lg:px-20" : "w-5/6 mx-auto"}`
         }
       >
-        <Link href={`/project/${200}`} className="relative flex mb-[1.5em] group hover:shadow-2xl">
+        <Link href={`/project/${200}`} className="group relative flex mb-[1.5em]">
           <Image
             src="/images/DSC03379.jpg"
             alt="Picture of the author"
             width={1000}
             height={0}
-            className="rounded-lg break-inside w-full object-contain group-hover:blur ease-in-out duration-300"
+            className="rounded-lg break-inside w-full object-contain group-hover:brightness-50 ease-in-out duration-300"
           />
 
-          <div className="absolute flex w-full h-full cursor-pointer rounded-lg p-4">
+          <div className="absolute flex w-full h-full cursor-pointer opacity-0 hover:opacity-100 rounded-lg p-4 ease-in-out duration-300">
             <span className="text-white mt-auto">Titre du projet</span>
           </div>
         </Link>
