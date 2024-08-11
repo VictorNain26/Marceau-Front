@@ -5,7 +5,6 @@ import { useState } from "react";
 import Image from "next/image"
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
-import YouTubeEmbed from  "@/components/atoms/YoutubeIframe";
 
 const Main = ({ data }) => {
   const [isActive, setActive] = useState(true);
@@ -69,7 +68,7 @@ const Main = ({ data }) => {
         </header>
 
         <video
-          src="https://www.youtube.com/embed/xdqUbzaokEY"
+          src={ `${data.Background.data.attributes.url}` }
           autoPlay loop muted
           className={
             `object-cover fixed right-0 ease-in-out duration-200 h-screen
@@ -77,8 +76,6 @@ const Main = ({ data }) => {
             ${inView ? "blur-3xl scale-125" : ""}`
           }
         />
-
-        {/* <YouTubeEmbed videoId="xdqUbzaokEY" /> */}
 
         <div className={ `h-screen ease-in-out duration-200 ml-auto ${isActive ? "w-4/5" : "w-full"}` }>
           <ChevronLeftIcon

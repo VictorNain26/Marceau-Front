@@ -1,15 +1,19 @@
 import Main from "@/components/templates/main";
-import { getStoryblokApi } from "@storyblok/react/rsc";
 
-export async function fetchData() {
-  let sbParams = { version: "draft" };
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/home?populate=*`)
  
-  const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/home`, sbParams, {cache: "no-store"});
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  const data = await res.json();
+  
+  return data.data.attributes;
 }
 
 export default async function Home() {
-  const { data } = await fetchData();
+  const data = await getData()
 
   return (
     < Main data={data} />

@@ -5,13 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next build && next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
-    "@storyblok/react": "^3.0.10",
-    "@vercel/blob": "^0.23.4",
     "axios": "^1.7.2",
     "next": "14.2.4",
     "photoswipe": "^5.4.4",
