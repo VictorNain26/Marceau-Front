@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 
-const Main = ({ data }) => {
+const Main = ({ home, projects }) => {
   const [isActive, setActive] = useState(true);
   const { ref, inView } = useInView({
     threshold: 0.05,
@@ -26,19 +26,15 @@ const Main = ({ data }) => {
           }
         >
           <Image
-            src="/images/DSC03379.jpg"
+            src={ `${home.headerbackground.data.attributes.url}` }
             alt="Picture of the author"
             width={1000}
             height={0}
             className="object-cover absolute w-full h-full left-0 top-0 blur-3xl -z-10"
           />
 
-          <span className="pt-20 text-3xl xl:text-4xl text-start">
-            MARCEAU
-          </span>
-
-          <span className="mb-auto text-3xl xl:text-4xl text-start">
-            LUTIN
+          <span className="pt-20 mb-auto text-3xl xl:text-4xl text-start text-nowrap">
+            { home.title }
           </span>
 
           <ul className="text-sm mb-auto">
@@ -68,7 +64,7 @@ const Main = ({ data }) => {
         </header>
 
         <video
-          src={ `${data.Background.data.attributes.url}` }
+          src={ `${home.background.data.attributes.url}` }
           autoPlay loop muted
           className={
             `object-cover fixed right-0 ease-in-out duration-200 h-screen
@@ -102,103 +98,23 @@ const Main = ({ data }) => {
             ${isActive ? "w-full lg:w-4/5 ml-auto px-4 lg:px-20" : "w-5/6 mx-auto"}`
           }
         >
-          <Link href={`/project/${200}`} className="group relative flex mb-[1.5em]">
-            <Image
-              src="/images/DSC03379.jpg"
-              alt="Picture of the author"
-              width={1000}
-              height={0}
-              className="rounded-lg break-inside w-full object-contain group-hover:brightness-50 ease-in-out duration-300"
-            />
+          {
+            projects.map((project) => (
+              <Link key={project.id} href={`/project/${project.id}`} className="group relative flex mb-[1.5em]">
+                <Image
+                  src={ `${project.attributes.medias.data[0].attributes.url}` }
+                  alt="Picture of the author"
+                  width={1000}
+                  height={0}
+                  className="rounded-lg break-inside w-full object-contain group-hover:brightness-50 ease-in-out duration-300"
+                />
 
-            <div className="absolute flex w-full h-full cursor-pointer opacity-0 hover:opacity-100 rounded-lg p-4 ease-in-out duration-300">
-              <span className="text-white mt-auto">Titre du projet</span>
-            </div>
-          </Link>
-
-          <div className="relative mb-[1.5em]">
-            <Image
-              src="/images/DSC03385.jpg"
-              alt="Picture of the author"
-              width={1000}
-              height={0}
-              className="rounded-lg break-inside mx-auto w-full object-contain  "
-            />
-
-            <div className="absolute top-0 left-0 w-full h-full cursor-pointer bg-stone-950 opacity-0 hover:blur-3xl ease-in-out duration-300 rounded-lg">
-              <span className="text-white">Titre du projet</span>
-            </div>
-          </div>
-
-          <div className="relative mb-[1.5em]">
-            <Image
-              src="/images/DSC03379.jpg"
-              alt="Picture of the author"
-              width={1000}
-              height={0}
-              className="rounded-lg break-inside mx-auto w-full"
-            />
-          </div>
-
-          <div className="relative mb-[1.5em]">
-            <Image
-              src="/images/DSC03385.jpg"
-              alt="Picture of the author"
-              width={1000}
-              height={0}
-              className="rounded-lg break-inside mx-auto w-full"
-            />
-          </div>
-
-          <div className="relative mb-[1.5em]">
-            <Image
-              src="/images/DSC03379.jpg"
-              alt="Picture of the author"
-              width={1000}
-              height={0}
-              className="rounded-lg break-inside mx-auto w-full"
-            />
-          </div>
-
-          <div className="relative mb-[1.5em]">
-            <Image
-              src="/images/DSC03379.jpg"
-              alt="Picture of the author"
-              width={1000}
-              height={0}
-              className="rounded-lg break-inside mx-auto w-full"
-            />
-          </div>
-
-          <div className="relative mb-[1.5em]">
-            <Image
-              src="/images/DSC03385.jpg"
-              alt="Picture of the author"
-              width={1000}
-              height={0}
-              className="rounded-lg break-inside mx-auto w-full"
-            />
-          </div>
-
-          <div className="relative mb-[1.5em]">
-            <Image
-              src="/images/DSC03385.jpg"
-              alt="Picture of the author"
-              width={1000}
-              height={0}
-              className="rounded-lg break-inside mx-auto w-full"
-            />
-          </div>
-
-          <div className="relative mb-[1.5em]">
-            <Image
-              src="/images/DSC03379.jpg"
-              alt="Picture of the author"
-              width={1000}
-              height={0}
-              className="rounded-lg break-inside mx-auto w-full"
-            />
-          </div>
+                <div className="absolute flex w-full h-full cursor-pointer opacity-0 hover:opacity-100 rounded-lg p-4 ease-in-out duration-300">
+                  <span className="text-white mt-auto">{project.attributes.title}</span>
+                </div>
+              </Link>
+            ))
+          }
         </section>
       </main>
     </>
