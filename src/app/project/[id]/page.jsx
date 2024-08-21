@@ -9,7 +9,7 @@ export async function generateStaticParams() {
   }))
 }
 
-async function getPost(id) {
+async function getProject(id) {
   const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/projets/${id}?populate=*`);
   const project = await response.json();
 
@@ -17,7 +17,7 @@ async function getPost(id) {
 }
 
 export default async function Project({ params }) {
-  const data =  await getPost(params.id);
+  const data =  await getProject(params.id);
 
   return (
     < ProjectData project={data} />

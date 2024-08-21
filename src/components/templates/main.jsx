@@ -63,17 +63,18 @@ const Main = ({ home, projects }) => {
           </div>
         </header>
 
-        <video
-          src={ `${home.background.data.attributes.url}` }
-          autoPlay loop muted
-          className={
-            `object-cover fixed right-0 ease-in-out duration-200 h-screen
-            ${isActive ? "w-full lg:w-4/5" : "w-full"}
-            ${inView ? "blur-3xl scale-125" : ""}`
-          }
-        />
 
         <div className={ `h-screen ease-in-out duration-200 ml-auto ${isActive ? "w-4/5" : "w-full"}` }>
+          <video
+            src={ `${home.background.data.attributes.url}` }
+            autoPlay loop muted
+            className={
+              `object-cover fixed right-0 ease-in-out duration-200 h-screen
+              ${isActive ? "w-full lg:w-4/5" : "w-full"}
+              ${inView ? "blur-3xl scale-125" : ""}`
+            }
+          />
+          
           <ChevronLeftIcon
             className={
               `hidden lg:flex fixed w-12 text-zinc-50 cursor-pointer ease-in-out duration-300 h-full z-10
@@ -103,8 +104,8 @@ const Main = ({ home, projects }) => {
               <Link key={project.id} href={`/project/${project.id}`} className="group relative flex mb-[1.5em]">
                 <Image
                   src={ `${project.attributes.medias.data[0].attributes.url}` }
-                  alt="Picture of the author"
-                  width={1000}
+                  alt={project.attributes.titre}
+                  width={5000}
                   height={0}
                   className="rounded-lg break-inside w-full object-contain group-hover:brightness-50 ease-in-out duration-300"
                 />
